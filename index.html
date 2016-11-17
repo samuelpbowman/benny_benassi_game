@@ -10,11 +10,15 @@
         <script>
             $(document).ready(function() {
                 $("button").click(function() {
-                    $("#gameField").append("<p>" + buttonMessage()+"</p>");
+                    var ms = buttonMessage();
+                    $("#gameField").append("<p>" +ms+"</p>");
+                    if(ms === "Satisfaction") {
+                        $("#gameBut").hide();
+                    }
                 })
             });
         </script>
         <div id="gameField"></div>
-        <button>Press to reveal a secret message!</button>
+        <button id="gameBut">Press to reveal a secret message!</button>
     </body>
 </html>
